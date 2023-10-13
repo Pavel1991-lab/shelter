@@ -1,0 +1,23 @@
+{% extends 'dogs/base.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        {% for object in object_list %}
+        <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{object.photo|my_media}}"
+                 alt="Card image cap">
+            <div class="card-body">
+                <p class="card-text">{{object.name|title}}</p>
+            </div>
+            <div class="card=footer">
+                 <a href="{%url 'dogs:dog_update'  object.pk %}"  class="btn btn-primary">Изменить</a>
+                 <a href="{%url 'dogs:dog_delete'  object.pk %}"  class="btn btn-danger">Удалить</a>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

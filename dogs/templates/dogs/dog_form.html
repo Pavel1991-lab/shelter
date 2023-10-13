@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+<body>
+
+
+       <div class="col-12">
+    <form method="post" enctype="multipart/form-data">
+         <div class="row text-center">
+             <div class="col-6">
+                <div class="card h-100">
+                     <div class="card-body">
+                             {% csrf_token %}
+                             {{ form.as_p }}
+                             <button type="submit" class="btn-success">Создать</button>
+                     </div>
+                 </div>
+             </div>
+          </div>
+      </form>
+        </div>
+</body>
+</html>
