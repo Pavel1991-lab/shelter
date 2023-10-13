@@ -1,12 +1,12 @@
 from django.urls import path
 
 from dogs.apps import DogsConfig
-from dogs.views import index, CategoryListView, DogListView, DogCreateView, DogUpdateView, DogDeleteView
+from dogs.views import IndexView, CategoryListView, DogListView, DogCreateView, DogUpdateView, DogDeleteView
 
 app_name = DogsConfig.name
 
 urlpatterns = [
-    path('', index, name='index'),
+    path('', IndexView.as_view(), name='index'),
     path('categories/', CategoryListView.as_view(), name='categories'),
     path('dogs/<int:pk>', DogListView.as_view(), name='category_dogs'),
     path('dogs/create', DogCreateView.as_view(), name='dog_create'),
