@@ -9,8 +9,10 @@
                  alt="Card image cap">
             <div class="card-body">
                 <p class="card-text">{{object.name|title}}</p>
+                <p class="card-text">{{object.birthday}}</p>
             </div>
             <div class="card=footer">
+                 <a href="{%url 'dogs:dog_cr' object.pk %}"  class="btn btn-primary">Создать собаку</a>
                  <a href="{%url 'dogs:dog_update'  object.pk %}"  class="btn btn-primary">Изменить</a>
                  <a href="{%url 'dogs:dog_delete'  object.pk %}"  class="btn btn-danger">Удалить</a>
             </div>
